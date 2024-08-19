@@ -1,0 +1,14 @@
+
+<svg width="480" height="90" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0">
+  <title>EMS</title>
+  <g id="ems_logo_layer">
+  <g id="ems_logo" class="ems-logo">
+  <g id="ems_logo_text_microgrid" class="ems-logo-text-microgrid">
+  <text font-family="Noto Sans JP" font-size="39" font-weight="bold" id="text_microgrid" letter-spacing="28" stroke="#0f0f00" stroke-width="0" text-anchor="start" transform="matrix(1 0 0 1 0 0)" x="0" xml:space="preserve" y="43.5">MICROGRID</text>
+  </g>
+  <g id="ems_logo_text_ems" class="ems-logo-text-ems">
+  <text font-family="Noto Sans JP" font-size="34" font-weight="normal" id="text_ems" letter-spacing="0" stroke="#00f0f0" stroke-width="0" text-anchor="start" textLength="0" x="0" xml:space="preserve" y="78.5">Energy Management System</text>
+  </g>
+ </g>
+ </g>
+</svg>

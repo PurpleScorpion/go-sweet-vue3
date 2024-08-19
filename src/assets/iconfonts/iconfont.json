@@ -1,0 +1,72 @@
+{
+  "id": "4306259",
+  "name": "ems",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2393768",
+      "name": "通电",
+      "font_class": "tongdian",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "5508558",
+      "name": "停电",
+      "font_class": "tingdian-",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "30787901",
+      "name": "报警确认",
+      "font_class": "baojingqueren",
+      "unicode": "e71e",
+      "unicode_decimal": 59166
+    },
+    {
+      "icon_id": "883901",
+      "name": "灯泡",
+      "font_class": "dengpao",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "7626531",
+      "name": "离线",
+      "font_class": "lixian",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "37632955",
+      "name": "变压器",
+      "font_class": "bianyaqi",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "11249689",
+      "name": "colors",
+      "font_class": "colors",
+      "unicode": "e838",
+      "unicode_decimal": 59448
+    },
+    {
+      "icon_id": "5635068",
+      "name": "sun",
+      "font_class": "sun",
+      "unicode": "f2d7",
+      "unicode_decimal": 62167
+    },
+    {
+      "icon_id": "35336143",
+      "name": "moon",
+      "font_class": "moon",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    }
+  ]
+}
