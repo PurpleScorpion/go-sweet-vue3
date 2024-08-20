@@ -52,6 +52,8 @@ export default {
             confirmPassWord:'Please re-enter password',
             roleSelect:'Please select a role',
             selectrole:'Select Role',
+            enabled:'enabled',
+            disabled:'disabled',
             deleteUser: 'Do you want to delete this user?'
         },
         role:{

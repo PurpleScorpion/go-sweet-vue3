@@ -48,6 +48,8 @@ export const useAuthStore = defineStore('auth', {
         this.menuShowList=[]
         this.role = data?.value?.data.role
         this.authenticated = true; // set authenticated  state value to true
+        const menuShowList = useCookie('menuShowList');
+        menuShowList.value = data.value.data.routers;
         sessionStorage.setItem("token",data?.value?.data.token)
         sessionStorage.setItem("role",data?.value?.data.role)
         sessionStorage.setItem("username",data?.value?.data.username)

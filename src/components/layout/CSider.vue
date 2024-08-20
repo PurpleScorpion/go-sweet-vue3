@@ -24,25 +24,20 @@
         >{{ $t("menu.title.dashboard") }}</a-menu-item
       >
       <a-sub-menu
-        key="sub2"
+        key="sub1"
         :icon="h(SettingOutlined)"
         :title="$t('menu.title.system.management.summary')"
         v-if="hasShow('system')"
       >
-        <a-menu-item key="11" v-if="hasShow('system_user')">{{
+        <a-menu-item key="100" v-if="hasShow('system_user')">{{
           $t("menu.title.system.management.user")
         }}</a-menu-item>
-        <a-menu-item key="12" v-if="hasShow('system_role')">{{
+        <a-menu-item key="101" v-if="hasShow('system_role')">{{
           $t("menu.title.system.management.role")
         }}</a-menu-item>
-        <a-menu-item key="13" v-if="hasShow('system_permissions')">{{
+        <a-menu-item key="102" v-if="hasShow('system_permissions')">{{
           $t("menu.title.system.management.permissions")
         }}</a-menu-item>
-        <a-menu-item key="14" v-if="hasShow('system_mst_base')">{{
-          $t("menu.title.system.management.mst.base")
-        }}</a-menu-item>
-        <a-menu-item key="15" v-if="hasShow('eventhub')">{{$t("menu.title.system.management.eventHubLive")}}</a-menu-item>
-        <a-menu-item key="16" v-if="hasShow('iothub_msg_transfer')">{{$t("menu.title.system.management.msgTransfer")}}</a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>
@@ -69,37 +64,21 @@ const config = useRuntimeConfig(event);
 
 const menuState = reactive({
   rootSubmenuKeys: ["1", "sub1", "sub2"],
-  openKeys: ["sub1", "sub2"],
+  openKeys: ["sub1"],
   selectedKeys: ["1"],
 });
 
-
+// 用于刷新时回显被选中的sider
 onMounted(() => {
     let path = router.currentRoute.value.fullPath
     if (path == "/dashboard" || path == "/dashboard/"){
         menuState.selectedKeys = ["1"]
-    }else if (path == "/device" || path == "/device/"){
-        menuState.selectedKeys = ["2"]
-    }else if (path == "/general-setting" || path == "/general-setting/"){
-        menuState.selectedKeys = ["3"]
-    }else if (path == "/schedule" || path == "/schedule/"){
-        menuState.selectedKeys = ["4"]
-    }else if (path == "/template" || path == "/template/"){
-        menuState.selectedKeys = ["5"]
-    }else if (path == "/log" || path == "/log/"){
-        menuState.selectedKeys = ["7"]
     }else if (path == "/system/user" || path == "/system/user/"){
-        menuState.selectedKeys = ["11"]
+        menuState.selectedKeys = ["100"]
     }else if (path == "/system/role" || path == "/system/role/"){
-        menuState.selectedKeys = ["12"]
+        menuState.selectedKeys = ["101"]
     }else if (path == "/system/menu" || path == "/system/menu/"){
-        menuState.selectedKeys = ["13"]
-    }else if (path == "/system/mst-base" || path == "/system/mst-base/"){
-        menuState.selectedKeys = ["14"]
-    }else if (path == "/system/eventhub" || path == "/system/eventhub/"){
-        menuState.selectedKeys = ["15"]
-    }else if (path == "/system/iothub" || path == "/system/iothub/"){
-        menuState.selectedKeys = ["16"]
+        menuState.selectedKeys = ["102"]
     }else{
         menuState.selectedKeys = ["1"]
     }
@@ -113,40 +92,15 @@ function handleClick({ key }: MenuInfo) {
   switch (key) {
     case "1":
       router.push("/dashboard");
-      
       break;
-    case "2":
-      router.push("/device");
-      break;
-    case "3":
-      router.push("/general-setting");
-      break;
-    case "4":
-      router.push("/schedule");
-      break;
-    case "5":
-      router.push("/template");
-      break;
-    case "7":
-      router.push("/log");
-      break;
-    case "11":
+    case "100":
       router.push("/system/user");
       break;
-    case "12":
+    case "101":
       router.push("/system/role");
       break;
-    case "13":
+    case "102":
       router.push("/system/menu");
-      break;
-    case "14":
-      router.push("/system/mst-base");
-      break;
-    case "15":
-      router.push("/system/eventhub");
-      break;
-    case "16":
-      router.push("/system/iothub");
       break;
     default:
       router.push("/dashboard");
@@ -157,7 +111,7 @@ function handleClick({ key }: MenuInfo) {
 
 const hasShow = (rooterName: string) => {
   const menuShow: any = useCookie("menuShowList");
-  if (menuShow.value && menuShow.value !== null) {
+  if (menuShow.value) {
     for (let i = 0; i < menuShow.value.length; i++) {
       if (menuShow.value[i] == rooterName) {
         return true;

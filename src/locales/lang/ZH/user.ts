@@ -52,6 +52,8 @@ export default {
             confirmPassWord:'请重复输入密码',
             roleSelect:'请选择角色',
             selectrole:'选择角色',
+            enabled:'启用',
+            disabled:'禁用',
             deleteUser: '是否要删除该用户?'
         },
         role:{

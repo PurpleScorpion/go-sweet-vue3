@@ -14,8 +14,8 @@
             <DeleteOutlined class="icon" @click="deleteUser(record.id)" />
             <a-divider type="vertical" />
             <a-switch :checkedValue="record.status == 0"
-                      :checked-children="$t('user.mst.base.enabled')"
-                      :un-checked-children="$t('user.mst.base.disabled')"
+                      :checked-children="$t('user.user.enabled')"
+                      :un-checked-children="$t('user.user.disabled')"
                       @click="changeStatus(record.id,record.status)" />
           </template>
         </template>
