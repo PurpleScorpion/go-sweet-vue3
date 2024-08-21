@@ -26,7 +26,6 @@ export const useAuthStore = defineStore('auth', {
     },
     roleList: ref<any>(),
     rolePageList: ref<any>(),
-    menuShowList: ref<any>(),
   }),
 
   actions: {
@@ -45,11 +44,8 @@ export const useAuthStore = defineStore('auth', {
       this.authenticated = false;
       if (data.value) {
 		this.code = data.value.code
-        this.menuShowList=[]
         this.role = data?.value?.data.role
         this.authenticated = true; // set authenticated  state value to true
-        const menuShowList = useCookie('menuShowList');
-        menuShowList.value = data.value.data.routers;
         sessionStorage.setItem("token",data?.value?.data.token)
         sessionStorage.setItem("role",data?.value?.data.role)
         sessionStorage.setItem("username",data?.value?.data.username)
@@ -65,12 +61,12 @@ export const useAuthStore = defineStore('auth', {
       this.changePwdData = data.value
     },
     logUserOut() {
-      const token = useCookie('token'); // useCookie new hook in nuxt 3
       this.authenticated = false; // set authenticated  state value to false
-      token.value = null; // clear the token cookie
-      const passwordStatus = useCookie('passwordStatus');
-      passwordStatus.value = null
       sessionStorage.removeItem("token")
+      sessionStorage.removeItem("role")
+      sessionStorage.removeItem("username")
+      sessionStorage.removeItem("menuShowList")
+
     },
     async getRoleById(id: any) {
       const { data }: any = await useFetch(`/role/getRoleById/${id}`, {

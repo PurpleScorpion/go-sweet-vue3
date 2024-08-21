@@ -110,10 +110,11 @@ function handleClick({ key }: MenuInfo) {
 
 
 const hasShow = (rooterName: string) => {
-  const menuShow: any = useCookie("menuShowList");
-  if (menuShow.value) {
-    for (let i = 0; i < menuShow.value.length; i++) {
-      if (menuShow.value[i] == rooterName) {
+  const menuShow: any = sessionStorage.getItem("menuShowList")
+  if (menuShow) {
+    let json = menuShow.split(",")
+    for (let i = 0; i < json.length; i++) {
+      if (json[i] == rooterName) {
         return true;
       }
     }
