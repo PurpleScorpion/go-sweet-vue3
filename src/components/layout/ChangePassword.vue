@@ -58,12 +58,12 @@ const handleOk = async () => {
   await changePwd(user);
   if (changePwdData.value && changePwdData.value.code == 200) {
       handleCancel(true)
-  } else if(changePwdData.value && changePwdData.value.code == 500){
-      message.error(t('message.updatePasswordError500'));
-  } else if(changePwdData.value && changePwdData.value.code == 501){
-      message.error(t('message.updatePasswordError501'));
+  } else if(changePwdData.value && changePwdData.value.code == 510){
+      message.error(t('msg.password.error1'));
+  } else if(changePwdData.value && changePwdData.value.code == 514){
+      message.error(t('msg.password.error2'));
   } else {
-      message.error(t('message.updatePasswordError'));
+    message.error(t('msg.common.error1'));
   }
   
 };

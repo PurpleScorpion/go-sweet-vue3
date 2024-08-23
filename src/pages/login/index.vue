@@ -86,7 +86,7 @@ const login = async () => {
     }
     return
   } else {
-    message.error(t("user.login.msg2"));
+    message.error(t("msg.login.error1"));
     return
   }
 };

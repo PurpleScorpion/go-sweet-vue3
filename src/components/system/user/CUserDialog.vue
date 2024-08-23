@@ -90,21 +90,21 @@ const handleSave = async () => {
 };
 const formCheck = () => {
   if (userForm.value.userName == "") {
-    message.error(t('message.updatePasswordUserNameError'));
+    message.error(t('msg.user.error1'));
     return false;
   }
   if (userForm.value.role == null) {
-    message.error(t('message.updatePasswordRoleError'));
+    message.error(t('msg.user.error2'));
     return false;
   }
 
   if (dialogType.value == 'Insert' && userForm.value.password == "") {
-    message.error(t('message.updatePasswordPasswordError'));
+    message.error(t('msg.user.error3'));
     return false;
   }
   if (userForm.value.password != "") {
     if (userForm.value.password != userForm.value.rePassword) {
-      message.error(t('message.updatePasswordRePasswordError'));
+      message.error(t('msg.user.error4'));
       return false;
     }
   }
