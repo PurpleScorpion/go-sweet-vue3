@@ -68,6 +68,9 @@ export const sysUserStore = defineStore('sysUser', {
                 method: 'get',
                 watch: false
             });
+            if (data.value && data.value.code == 200 && data.value.data){
+                sessionStorage.setItem("token",data.value.data)
+            }
         },
         async changeUserStatus(parma: any) {
             const {data}: any = await useFetch(`/sys/user/changeUserStatus`, {
