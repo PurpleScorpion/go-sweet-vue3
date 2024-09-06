@@ -64,11 +64,11 @@ const initPage = async () => {
     userForm.value.id = 0
     userForm.value.username = ''
     userForm.value.password = ''
+    userForm.value.rePassword = ''
     userForm.value.role = ''
   } else {
     userForm.value.id = userEntity.value.id
     userForm.value.username = userEntity.value.username
-    userForm.value.password = userEntity.value.password
     userForm.value.role = userEntity.value.role
   }
 };
